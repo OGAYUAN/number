@@ -13,19 +13,22 @@ r = random.randint(a , b)
 x = 0#啟示次數
 print(r)
 while True:
-	x = x +1#猜一次+1
-	usre = input('請猜數字: ')
-	usre = int(usre)#記得類型轉換
+	x += 1#快寫法 猜一次+1 x = x + 1
+	usre = input('請猜數字: ')#字串
+	usre = int(usre)#記得類型轉換#int整數
 	if usre == r:
 		print('終於猜對了')
-		print('總共猜了', x, '次')
+		print('第', x, '次猜對')
 		break#答對時結束
+	elif x == 10:
+			print('已猜錯10次!')
+	elif x >= 11:
+			print('認真點好不!')
 	else:
 		if r > usre:
 			print('比答案小')
 		elif r < usre:
 			print('比答案大')
-			
-
+	print('猜', x, '次')
 
 
